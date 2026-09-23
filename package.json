@@ -1,0 +1,70 @@
+{
+  "name": "dsh-gpu-monitor-nvml",
+  "version": "1.0.0",
+  "description": "NVIDIA-only real-time multi-GPU monitor pane (NVML / nvidia-smi) for DeepSeek Harness web UI. Not AMD/Intel/macOS.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "media"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "prepare": "node build.mjs || node -e \"console.warn('[dsh-gpu-monitor-nvml] prepare: build skipped (build toolchain unavailable); relying on prebuilt lib/')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janpauldahlke/dsh-gpu-monitor-nvml.git"
+  },
+  "homepage": "https://github.com/janpauldahlke/dsh-gpu-monitor-nvml#readme",
+  "bugs": {
+    "url": "https://github.com/janpauldahlke/dsh-gpu-monitor-nvml/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "nvidia",
+    "nvml",
+    "gpu",
+    "monitor",
+    "nvidia-smi"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.6.0"
+  },
+  "author": {
+    "name": "Jan (HagbardCeline)",
+    "email": "jandareal@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF (coauthor)"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "node-nvml": "^0.1.4"
+  }
+}

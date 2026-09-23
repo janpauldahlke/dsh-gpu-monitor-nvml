@@ -1,0 +1,6 @@
+# dsh-gpu-monitor-nvml layer: one Loader row for the dual-face package.
+# Host half = package root export (lib/index.js); browser half = ./client
+# export (lib/client.js) discovered from the package's dsh.client declaration.
+- insert:
+    - id: gpu-monitor
+      name: dsh-gpu-monitor-nvml
