@@ -21,7 +21,9 @@ const GPU_FIELDS = [
   'index', 'name', 'uuid', 'driver_version',
   'utilization.gpu', 'utilization.memory',
   'memory.used', 'memory.free', 'memory.total',
-  'temperature', 'power.draw', 'power.limit',
+  // Bare `temperature` is rejected by modern nvidia-smi (Windows + Linux);
+  // the documented field is temperature.gpu.
+  'temperature.gpu', 'power.draw', 'power.limit',
   'clocks.sm', 'clocks.mem',
 ].join(',')
 
@@ -146,7 +148,7 @@ export async function sampleSmi(): Promise<GpuFleetSnapshot> {
       sample.memoryUsedMiB = toNumber(get('memory.used'))
       sample.memoryFreeMiB = toNumber(get('memory.free'))
       sample.memoryTotalMiB = toNumber(get('memory.total'))
-      sample.temperatureC = toNumber(get('temperature'))
+      sample.temperatureC = toNumber(get('temperature.gpu'))
       sample.powerW = toNumber(get('power.draw')) === undefined ? undefined
         : round1(Number(get('power.draw')))
       sample.powerLimitW = toNumber(get('power.limit')) === undefined ? undefined
