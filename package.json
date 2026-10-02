@@ -1,6 +1,6 @@
 {
   "name": "dsh-gpu-monitor-nvml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NVIDIA-only real-time multi-GPU monitor pane (NVML / nvidia-smi) for DeepSeek Harness web UI. Not AMD/Intel/macOS.",
   "type": "module",
   "main": "lib/index.js",
@@ -29,13 +29,20 @@
     "url": "https://github.com/janpauldahlke/dsh-gpu-monitor-nvml/issues"
   },
   "keywords": [
+    "dsh-plugin",
     "deepseek-harness",
+    "deepseek-harness-plugin",
     "dsh",
+    "cordis",
+    "cordis-plugin",
     "nvidia",
     "nvml",
     "gpu",
-    "monitor",
-    "nvidia-smi"
+    "gpu-monitor",
+    "multi-gpu",
+    "nvidia-smi",
+    "sidebar",
+    "web-ui"
   ],
   "dsh": {
     "bundle": {
