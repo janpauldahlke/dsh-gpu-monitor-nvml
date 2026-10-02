@@ -136,11 +136,17 @@ dsh-gpu-monitor-nvml/
 Requires **DeepSeek Harness** with a web profile and an **NVIDIA** driver
 (`nvidia-smi` on PATH at minimum; NVML on Linux via `node-nvml`).
 
-### From GitHub (users)
+### From npm (recommended)
+
+```sh
+dsh plugin --profile web add dsh-gpu-monitor-nvml
+# restart dsh web (or rely on live patch reload), then hard-refresh the browser
+```
+
+### From GitHub
 
 ```sh
 dsh plugin --profile web add github:janpauldahlke/dsh-gpu-monitor-nvml
-# restart dsh web (or rely on live patch reload), then hard-refresh the browser
 ```
 
 `lib/` is committed, so install does not require a local TypeScript/esbuild toolchain.

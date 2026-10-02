@@ -1,6 +1,6 @@
 {
   "name": "dsh-gpu-monitor-nvml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NVIDIA-only real-time multi-GPU monitor pane (NVML / nvidia-smi) for DeepSeek Harness web UI. Not AMD/Intel/macOS.",
   "type": "module",
   "main": "lib/index.js",
